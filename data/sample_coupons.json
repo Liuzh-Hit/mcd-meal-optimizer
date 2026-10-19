@@ -1,0 +1,20 @@
+{
+  "_comment": "脱敏示例优惠券，覆盖满减 / 折扣 / 单品免费 / 单品立减 / 免配送费，以及两类互斥关系（CP01<->CP02 定向互斥，CP04 与所有券互斥），用于验证组合枚举与互斥提示。",
+  "coupons": [
+    {"couponId": "CP01", "name": "满 30 减 5", "type": "满减", "threshold": 30, "value": 5,
+     "endTime": "2026-11-30 23:59", "desc": "订单满 30 元可用，可与单品券以外的优惠叠加？以券面为准"},
+    {"couponId": "CP02", "name": "满 50 减 12", "type": "满减", "threshold": 50, "value": 12,
+     "endTime": "2026-10-31 23:59", "excludes": ["CP01"], "desc": "不可与满 30 减 5 同单使用"},
+    {"couponId": "CP03", "name": "巨无霸免费兑换券", "type": "免费兑换", "applicableProducts": ["M01"],
+     "endTime": "2026-10-31 23:59", "desc": "限兑换 1 份巨无霸"},
+    {"couponId": "CP04", "name": "全场 8 折（封顶 10 元）", "type": "折扣", "threshold": 20, "折扣": 8,
+     "maxDiscount": 10, "endTime": "2026-10-20 23:59", "excludes": ["*"],
+     "desc": "不可与其他任何优惠同享"},
+    {"couponId": "CP05", "name": "免配送费券", "type": "免配送费", "endTime": "2026-11-15 23:59",
+     "desc": "麦乐送订单可用"},
+    {"couponId": "CP06", "name": "麦辣鸡腿堡立减 3 元", "type": "单品立减", "applicableProducts": ["M02"], "value": 3,
+     "endTime": "2026-11-05 23:59"},
+    {"couponId": "CP07", "name": "中薯条免费券", "type": "免费兑换", "applicableProducts": ["M10"],
+     "endTime": "2026-10-28 23:59"}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "_comment": "脱敏示例门店数据，覆盖四种情形：可外送、距离超半径、不支持外送、缺少外送能力字段。",
+  "stores": [
+    {"name": "麦当劳（中关村店）", "code": "ST001", "address": "北京市海淀区中关村大街 1 号", "distance": "0.8km",
+     "supportDelivery": true, "deliveryFee": 9, "eta": "30 分钟", "status": "营业中", "businessHours": "07:00-23:00"},
+    {"name": "麦当劳（知春路店）", "code": "ST002", "address": "北京市海淀区知春路 12 号", "distance": "2.4km",
+     "supportDelivery": true, "deliveryFee": 9, "eta": "45 分钟", "status": "营业中", "businessHours": "06:00-24:00"},
+    {"name": "麦当劳（五道口店）", "code": "ST003", "address": "北京市海淀区成府路 28 号", "distance": "5.6km",
+     "supportDelivery": false, "status": "营业中", "businessHours": "07:00-22:00"},
+    {"name": "麦当劳（西直门店）", "code": "ST004", "address": "北京市西城区西直门外大街 1 号", "distance": "3.1km",
+     "status": "营业中", "businessHours": "07:00-23:00"},
+    {"name": "麦当劳（望京 SOHO 店）", "code": "ST005", "address": "北京市朝阳区望京街 10 号", "distance": "4.2km",
+     "supportDelivery": true, "deliveryFee": 12, "eta": "60 分钟", "status": "营业中", "businessHours": "07:00-22:30"}
+  ]
+}

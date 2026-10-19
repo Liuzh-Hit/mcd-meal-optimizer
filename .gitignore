@@ -1,0 +1,19 @@
+# 本地运行产物（含个人地址等隐私信息，禁止入库）
+_probe/
+data/live_menu.json
+data/live_coupons.json
+data/live_coverage.json
+data/unsellable.json
+# 多门店取数产物：每个子目录是「该门店的菜单/券/覆盖度」，index.json 含门店地址
+data/live_stores/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

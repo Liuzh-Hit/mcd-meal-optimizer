@@ -1,0 +1,65 @@
+{
+  "_comment": "场景模板。slots 决定套餐骨架：per_person 按人数换算份数（向上取整），count 为固定份数，min_count 为下限。quality_overrides 会覆盖模式权重中同名的键；tag_bonus 按关键词命中给菜品加权。",
+  "default": {
+    "label": "常规一餐",
+    "notes": "最通用的结构：每人一份主餐 + 一份小食 + 一份饮品。",
+    "slots": [
+      { "category": "MAIN", "per_person": 1 },
+      { "category": "SIDE", "per_person": 1 },
+      { "category": "DRINK", "per_person": 1 }
+    ]
+  },
+  "solo": {
+    "label": "单人独食",
+    "notes": "一人一份，避免凑单浪费。",
+    "slots": [
+      { "category": "MAIN", "per_person": 1 },
+      { "category": "SIDE", "per_person": 1 },
+      { "category": "DRINK", "count": 1, "min_count": 1 }
+    ]
+  },
+  "birthday": {
+    "label": "生日庆祝",
+    "notes": "在标准结构上补一份甜品；菜品权重偏向适合分享、有仪式感的单品。",
+    "slots": [
+      { "category": "MAIN", "per_person": 1 },
+      { "category": "SIDE", "per_person": 1.5 },
+      { "category": "DRINK", "per_person": 1 },
+      { "category": "DESSERT", "per_person": 0.5, "min_count": 1 }
+    ],
+    "tag_bonus": { "生日": 80, "分享": 45, "桶": 50, "甜品": 30, "蛋糕": 80 }
+  },
+  "date": {
+    "label": "约会双人",
+    "notes": "小食按 0.5 份/人共享（一份大薯或沙拉两人分），保留甜品；权重偏向甜品与咖啡，避免过重的油炸物。",
+    "slots": [
+      { "category": "MAIN", "per_person": 1 },
+      { "category": "SIDE", "per_person": 0.5, "min_count": 1 },
+      { "category": "DRINK", "per_person": 1 },
+      { "category": "DESSERT", "per_person": 0.5, "min_count": 1 }
+    ],
+    "tag_bonus": { "甜品": 40, "冰激凌": 30, "咖啡": 25, "双人": 40, "沙拉": 20 },
+    "quality_overrides": { "high_fat_pen": -45 }
+  },
+  "team": {
+    "label": "团建聚餐",
+    "notes": "小食按 1.5 份/人放大，权重强烈偏向分享装与桶类，鼓励一次点够而不是各自单点。",
+    "slots": [
+      { "category": "MAIN", "per_person": 1 },
+      { "category": "SIDE", "per_person": 1.5 },
+      { "category": "DRINK", "per_person": 1 }
+    ],
+    "tag_bonus": { "分享": 55, "桶": 65, "拼盘": 45, "多人": 45, "大份": 25 }
+  },
+  "family": {
+    "label": "家庭聚餐",
+    "notes": "介于常规与团建之间：小食共享一份，保留甜品，兼顾性价比。",
+    "slots": [
+      { "category": "MAIN", "per_person": 1 },
+      { "category": "SIDE", "per_person": 1, "min_count": 1 },
+      { "category": "DRINK", "per_person": 1 },
+      { "category": "DESSERT", "per_person": 0.5, "min_count": 1 }
+    ],
+    "tag_bonus": { "分享": 35, "桶": 40, "甜品": 20 }
+  }
+}
