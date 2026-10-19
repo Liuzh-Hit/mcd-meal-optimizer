@@ -89,7 +89,7 @@ mcd-meal-optimizer/
 
 ## 六、运行验证记录
 
-- `python scripts/selftest.py` → **78/78 通过**（29 项基础 + 49 项真实数据回归）
+- `python scripts/selftest.py` → **78/78 通过**（40 项基础 + 38 项真实数据回归）
 - `python scripts/make_examples.py` → 生成 `assets/example-output.md`（9 个场景的完整输出）
 - `python scripts/refresh_live.py --city <城市> --keyword <地标关键词>` →
   成功定位门店、拉取菜单/营养/券/门店、展开套餐明细并翻译成内部结构
